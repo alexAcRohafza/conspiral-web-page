@@ -70,10 +70,17 @@ a {
   text-align: center;
 }
 
+.site-header > a {
+  display: block;
+  width: min(100%, 21rem);
+  justify-self: center;
+}
+
 .logo {
   width: min(100%, 21rem);
   height: auto;
   display: block;
+  justify-self: center;
   margin-inline: auto;
 }
 
