@@ -74,6 +74,7 @@ a {
   width: min(100%, 21rem);
   height: auto;
   display: block;
+  margin-inline: auto;
 }
 
 .page-title {
