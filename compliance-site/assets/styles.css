@@ -1,0 +1,210 @@
+:root {
+  color-scheme: dark;
+  --bg: #020617;
+  --panel: rgba(15, 23, 42, 0.88);
+  --panel-strong: rgba(2, 6, 23, 0.9);
+  --text: #f9fafb;
+  --muted: #94a3b8;
+  --subtle: #64748b;
+  --line: rgba(148, 163, 184, 0.28);
+  --accent: #38bdf8;
+  --accent-2: #6366f1;
+  --warning: #f97316;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image: url("conspiracy_board_bg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: rgba(2, 6, 23, 0.34);
+}
+
+a {
+  color: inherit;
+}
+
+.site-shell {
+  width: min(100%, 760px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: max(1.25rem, env(safe-area-inset-top, 0px)) 1.25rem 2rem;
+}
+
+.site-header {
+  display: grid;
+  justify-items: center;
+  gap: 0.85rem;
+  padding: 0.5rem 0 1.25rem;
+  text-align: center;
+}
+
+.logo {
+  width: min(100%, 21rem);
+  height: auto;
+  display: block;
+}
+
+.page-title {
+  margin: 0;
+  font-size: clamp(1.5rem, 6vw, 2.15rem);
+  line-height: 1.1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.page-subtitle {
+  margin: 0;
+  max-width: 42rem;
+  color: var(--muted);
+  font-size: 0.86rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.content {
+  display: grid;
+  gap: 1rem;
+}
+
+.panel {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  padding: 1rem;
+  box-shadow: 0 16px 40px rgba(2, 6, 23, 0.24);
+}
+
+.panel h2,
+.panel h3 {
+  margin: 0 0 0.55rem;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.panel p,
+.panel ul,
+.panel ol {
+  margin-top: 0;
+  margin-bottom: 0.85rem;
+}
+
+.panel :last-child {
+  margin-bottom: 0;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.warning {
+  color: var(--warning);
+}
+
+.nav-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.button,
+.button-secondary {
+  display: inline-flex;
+  width: 100%;
+  min-height: 3.1rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(191, 219, 254, 0.78);
+  padding: 0.85rem 1rem;
+  background: radial-gradient(circle at top left, var(--accent), var(--accent-2));
+  color: #0b1120;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: 0 0 18px rgba(59, 130, 246, 0.46);
+}
+
+.button-secondary {
+  border-color: #1f2937;
+  background: var(--panel-strong);
+  color: #e5e7eb;
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.9);
+}
+
+.button:hover,
+.button-secondary:hover {
+  transform: translateY(-1px);
+}
+
+.meta-list {
+  display: grid;
+  gap: 0.6rem;
+  padding-left: 1.1rem;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 1rem;
+  padding: 1.25rem 0 0;
+  color: var(--subtle);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.footer a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+@media (min-width: 640px) {
+  .site-shell {
+    padding-inline: 2rem;
+  }
+
+  .panel {
+    padding: 1.2rem 1.35rem;
+  }
+
+  .nav-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
